@@ -87,8 +87,10 @@ python check_mcp.py https://<domain>/mcp --call <tool> '<json args>'
 It runs initialize -> tools/list -> tools/call and fails on any JSON-RPC error, a missing
 "Use this when" description or an empty result. Paste the real output into the report. Also try
 the 3 negative cases (bad input must give a clean error, not a 500).
-Optional: ChatGPT > Settings > Apps > Developer mode > add connector with the /mcp URL, try the
-5 positive prompts.
+Test inside ChatGPT (web, no Developer-mode toggle any more): https://chatgpt.com/plugins > **+** >
+**Add custom MCP server** > name + description > Connection: public endpoint `https://<domain>/mcp` >
+auth (No authentication) > accept the risk warning > **Create as a plugin** > install > new chat > type `@`
+and pick it. After server changes: **Refresh** on its connection. Run the 5 positive prompts there.
 
 ## Step 5 - Privacy + listing
 
@@ -105,6 +107,10 @@ Optional: ChatGPT > Settings > Apps > Developer mode > add connector with the /m
 - `tests.md`: 5 positive prompts with the expected tool + result, 3 negative prompts where the
   plugin must NOT trigger
 - `release-notes.md`, `STEPS.md` (portal clicks), icon, live check output
+- Every tool annotation (`readOnlyHint`, `openWorldHint`, `destructiveHint`) with a one-line
+  justification (the docs conflict on this; the submission checker can require it)
+- `review.demo_recording_url` in plugin.json: a HOSTED link reviewers can open (e.g. an unlisted video)
+  showing the main tools and the test cases on desktop AND mobile; record it in the ChatGPT test setup above
 - Test account only if auth is used: full features, no MFA / email codes / magic links
 
 ## Step 7 - Submit (platform.openai.com > Plugins)

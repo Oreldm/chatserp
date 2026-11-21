@@ -1,7 +1,7 @@
 {
   "name": "chatserp",
   "displayName": "ChatSERP",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get your product inside ChatGPT: builds, tests and submits a ChatGPT plugin (Apps SDK / MCP) for any product, website or API.",
   "author": {
     "name": "Oreldm",
