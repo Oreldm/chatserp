@@ -81,6 +81,15 @@ python check_mcp.py https://your.site/mcp \
 
 The skill reads OpenAI's live docs on every run, because the rules move.
 
+## Services the skill talks to
+
+ChatSERP has no server of its own and collects nothing (see [PRIVACY.md](PRIVACY.md)). While it works, Claude may reach:
+
+- **developers.openai.com**: reads OpenAI's public plugin docs (no user data is sent).
+- **Your own hosting** (Firebase, Cloud Run, Vercel...): deploys your plugin server with your own CLI login.
+- **Your own plugin endpoint**: `check_mcp.py` sends test calls to the URL you give it.
+- **platform.openai.com**: the plugin submission, in your own OpenAI account, with you at the keyboard.
+
 ## Good fits
 
 - A **real engine:** calculators, converters, solvers, analyzers, game move engines
