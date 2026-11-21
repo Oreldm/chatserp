@@ -40,6 +40,21 @@ ChatSEO is the playbook as one skill. Point Claude Code at your product and it r
 
 ## Install
 
+In Claude Code (one step):
+
+```
+/plugin install chatseo --marketplace Oreldm/chatseo
+```
+
+Or add the marketplace, then install:
+
+```
+/plugin marketplace add Oreldm/chatseo
+/plugin install chatseo@chatseo
+```
+
+Or copy the skill by hand:
+
 ```bash
 git clone https://github.com/Oreldm/chatseo
 cp -r chatseo/skills/chatseo ~/.claude/skills/        # macOS / Linux

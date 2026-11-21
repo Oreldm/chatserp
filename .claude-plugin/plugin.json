@@ -1,0 +1,11 @@
+{
+  "name": "chatseo",
+  "displayName": "ChatSEO",
+  "version": "1.0.0",
+  "description": "Get your product inside ChatGPT: builds, tests and submits a ChatGPT plugin (Apps SDK / MCP) for any product, website or API.",
+  "author": { "name": "Oreldm", "url": "https://github.com/Oreldm" },
+  "homepage": "https://github.com/Oreldm/chatseo",
+  "repository": "https://github.com/Oreldm/chatseo",
+  "license": "MIT",
+  "keywords": ["chatgpt", "chatgpt-plugins", "apps-sdk", "mcp", "seo", "growth"]
+}
