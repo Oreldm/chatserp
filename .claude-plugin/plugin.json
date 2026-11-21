@@ -18,5 +18,8 @@
     "seo",
     "growth"
   ],
-  "icon": ".claude-plugin/icon.png"
+  "icon": ".claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://github.com/Oreldm/chatserp/blob/main/PRIVACY.md",
+  "supportUrl": "https://github.com/Oreldm/chatserp/issues",
+  "documentationUrl": "https://github.com/Oreldm/chatserp#readme"
 }
