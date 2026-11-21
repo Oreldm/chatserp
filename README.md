@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/banner.svg" alt="ChatSEO" width="100%"></p>
+<p align="center"><img src="assets/banner.png" alt="AskRank" width="100%"></p>
 
 <p align="center">
   <b>Get your product inside ChatGPT, where people already ask for it.</b><br>
@@ -20,10 +20,10 @@ and the plugin that actually answers it gets the user.
 
 **Every big platform has a short window where getting users is cheap:** Facebook apps in 2007, the App Store in 2008, TikTok in 2019. ChatGPT plugins are that window right now.
 
-ChatSEO is the playbook as one skill. Point Claude Code at your product and it runs the whole thing:
+AskRank is the playbook as one skill. Point Claude Code at your product and it runs the whole thing:
 
 ```
-/chatseo my-product
+/askrank my-product
 ```
 
 ## What it does
@@ -43,30 +43,30 @@ ChatSEO is the playbook as one skill. Point Claude Code at your product and it r
 In Claude Code (one step):
 
 ```
-/plugin install chatseo --marketplace Oreldm/chatseo
+/plugin install askrank --marketplace Oreldm/askrank
 ```
 
 Or add the marketplace, then install:
 
 ```
-/plugin marketplace add Oreldm/chatseo
-/plugin install chatseo@chatseo
+/plugin marketplace add Oreldm/askrank
+/plugin install askrank@askrank
 ```
 
 Or copy the skill by hand:
 
 ```bash
-git clone https://github.com/Oreldm/chatseo
-cp -r chatseo/skills/chatseo ~/.claude/skills/        # macOS / Linux
-# Windows: xcopy /E /I chatseo\skills\chatseo %USERPROFILE%\.claude\skills\chatseo
+git clone https://github.com/Oreldm/askrank
+cp -r askrank/skills/askrank ~/.claude/skills/        # macOS / Linux
+# Windows: xcopy /E /I askrank\skills\askrank %USERPROFILE%\.claude\skills\askrank
 ```
 
-Then in Claude Code: *"Make a ChatGPT plugin for my product"*, or `/chatseo`.
+Then in Claude Code: *"Make a ChatGPT plugin for my product"*, or `/askrank`.
 
 Test any MCP endpoint without the skill:
 
 ```bash
-python skills/chatseo/tools/check_mcp.py https://your.site/mcp \
+python skills/askrank/tools/check_mcp.py https://your.site/mcp \
   --call search_items '{"query":"pricing"}' \
   --expect-error search_items '{"query":""}'
 ```
@@ -90,7 +90,7 @@ The skill reads OpenAI's live docs on every run, because the rules move.
 ## Repo layout
 
 ```
-skills/chatseo/
+skills/askrank/
   SKILL.md              the playbook Claude follows
   templates/server.mjs  MCP server template (Node 22, @modelcontextprotocol/sdk)
   tools/check_mcp.py    live endpoint checker (Python stdlib only)
@@ -104,4 +104,4 @@ Found a new review rule, a rejection reason, or a hosting recipe? Open a PR. Rej
 
 <sub>Not affiliated with, endorsed by, or sponsored by OpenAI or Anthropic. "ChatGPT" is a trademark of OpenAI. MIT licensed.</sub>
 
-If ChatSEO got your plugin approved, star the repo so the next builder finds it.
+If AskRank got your plugin approved, star the repo so the next builder finds it.

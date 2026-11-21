@@ -1,9 +1,9 @@
 ---
-name: chatseo
+name: askrank
 description: Turn a product, website or API into a ChatGPT plugin (OpenAI Apps SDK / MCP "plugins") that passes OpenAI review and brings users back to the product - value test, tool design from real data, MCP server (Node template), hosting, live JSON-RPC verification, privacy page, submission pack and portal submission. Invoke when the user says "ChatGPT plugin", "ChatGPT app", "Apps SDK", "get ChatGPT to recommend my product", or wants this done for a client's product.
 ---
 
-# ChatSEO - get your product into ChatGPT
+# AskRank - get your product into ChatGPT
 
 Builds a ChatGPT plugin (OpenAI calls them "plugins" since late 2026; the docs used to say "apps")
 for a product and takes it through OpenAI's review. Works for your own products or a client's.

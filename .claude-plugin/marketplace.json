@@ -1,10 +1,10 @@
 {
-  "name": "chatseo",
-  "description": "ChatSEO: get your product inside ChatGPT. Builds, tests and submits a ChatGPT plugin (Apps SDK / MCP) for any product.",
+  "name": "askrank",
+  "description": "AskRank: get your product inside ChatGPT. Builds, tests and submits a ChatGPT plugin (Apps SDK / MCP) for any product.",
   "owner": { "name": "Oreldm", "url": "https://github.com/Oreldm" },
   "plugins": [
     {
-      "name": "chatseo",
+      "name": "askrank",
       "source": "./",
       "description": "Turn any product, website or API into a ChatGPT plugin that passes OpenAI review: go/no-go value test, real-data tools, MCP server template, hosting, live endpoint check, submission pack.",
       "category": "productivity"
