@@ -1,3 +1,8 @@
+# Live endpoint checker (check_mcp.py)
+
+Write the code block below to `check_mcp.py` (Python 3, stdlib only) and run `python check_mcp.py https://your.site/mcp --call TOOL '{"arg":"x"}' --expect-error TOOL '{}'`.
+
+```python
 """Live check of a ChatGPT plugin MCP endpoint (stdlib only).
 
 python check_mcp.py https://example.com/mcp [--call TOOL 'JSON_ARGS'] [--expect-error TOOL 'JSON_ARGS']
@@ -43,3 +48,4 @@ def main(a):
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))
+```

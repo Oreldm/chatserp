@@ -1,3 +1,8 @@
+# MCP server template (server.mjs)
+
+Write the code block below to `server.mjs` in the product repo (Node 22+), then `npm i @modelcontextprotocol/sdk zod express`. Run locally with `PORT=8787 node server.mjs`.
+
+```js
 // ChatGPT plugin MCP server template (Node 22+).
 // npm i @modelcontextprotocol/sdk zod express
 // Stateless Streamable HTTP at POST /mcp, JSON responses. Replace the TOOLS section with real data.
@@ -84,3 +89,4 @@ export default app; // Firebase: export const mcp = onRequest({ memory: "256MiB"
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split(/[\\/]/).pop())) {
   app.listen(process.env.PORT || 8787, () => console.log("MCP on :" + (process.env.PORT || 8787) + "/mcp"));
 }
+```

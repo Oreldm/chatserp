@@ -1,14 +1,14 @@
 {
-  "name": "askrank",
-  "displayName": "AskRank",
+  "name": "chatserp",
+  "displayName": "ChatSERP",
   "version": "1.0.0",
   "description": "Get your product inside ChatGPT: builds, tests and submits a ChatGPT plugin (Apps SDK / MCP) for any product, website or API.",
   "author": {
     "name": "Oreldm",
     "url": "https://github.com/Oreldm"
   },
-  "homepage": "https://github.com/Oreldm/askrank",
-  "repository": "https://github.com/Oreldm/askrank",
+  "homepage": "https://github.com/Oreldm/chatserp",
+  "repository": "https://github.com/Oreldm/chatserp",
   "license": "MIT",
   "keywords": [
     "chatgpt",

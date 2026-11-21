@@ -1,9 +1,9 @@
 ---
-name: askrank
+name: chatserp
 description: Turn a product, website or API into a ChatGPT plugin (OpenAI Apps SDK / MCP "plugins") that passes OpenAI review and brings users back to the product - value test, tool design from real data, MCP server (Node template), hosting, live JSON-RPC verification, privacy page, submission pack and portal submission. Invoke when the user says "ChatGPT plugin", "ChatGPT app", "Apps SDK", "get ChatGPT to recommend my product", or wants this done for a client's product.
 ---
 
-# AskRank - get your product into ChatGPT
+# ChatSERP - get your product into ChatGPT
 
 Builds a ChatGPT plugin (OpenAI calls them "plugins" since late 2026; the docs used to say "apps")
 for a product and takes it through OpenAI's review. Works for your own products or a client's.
@@ -59,7 +59,7 @@ cannot produce alone, because it comes from ___ (our engine / our data / our acc
 
 ## Step 3 - Server
 
-Template: `templates/server.mjs` (Node 22, `@modelcontextprotocol/sdk`, `zod`, stateless Streamable
+Template: `templates/server.md` (write its code block to `server.mjs`; Node 22, `@modelcontextprotocol/sdk`, `zod`, stateless Streamable
 HTTP at `/mcp`, JSON responses, per-IP rate limit, CORS for chatgpt.com). Copy into the product repo,
 replace the TOOLS section with real data access.
 - Existing C#/.NET backend: NuGet `ModelContextProtocol.AspNetCore` (or a hand-written JSON-RPC
@@ -81,8 +81,9 @@ if the deploy packages the working tree, release from a clean worktree or wait.
 ## Step 4 - Verify live (mandatory before submitting)
 
 ```
-python tools/check_mcp.py https://<domain>/mcp --call <tool> '<json args>'
+python check_mcp.py https://<domain>/mcp --call <tool> '<json args>'
 ```
+(`check_mcp.py` = the code block in `tools/check_mcp.md`, written to a file.)
 It runs initialize -> tools/list -> tools/call and fails on any JSON-RPC error, a missing
 "Use this when" description or an empty result. Paste the real output into the report. Also try
 the 3 negative cases (bad input must give a clean error, not a 500).
