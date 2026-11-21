@@ -66,8 +66,8 @@ Then in Claude Code: *"Make a ChatGPT plugin for my product"*, or `/chatserp`.
 Test any MCP endpoint without the skill:
 
 ```bash
-python check_mcp.py   # from skills/chatserp/tools/check_mcp.md
- https://your.site/mcp \
+# check_mcp.py = the code block in skills/chatserp/tools/check_mcp.md
+python check_mcp.py https://your.site/mcp \
   --call search_items '{"query":"pricing"}' \
   --expect-error search_items '{"query":""}'
 ```
