@@ -122,8 +122,15 @@ and pick it. After server changes: **Refresh** on its connection. Run the 5 posi
   Communication, Education & Research, Security, Finance, Healthcare, Travel, Entertainment, Other
   ("Games" is invalid; games use Entertainment).
 - `brandColor` needs >= 2:1 contrast on white; `brandColorDark` >= 2:1 on #212121.
-- Up to 3 default prompts (<= 128 chars), exactly 5 positive + 3 negative test cases, `tools_triggered` as
-  strings, square logo, `./` asset paths.
+- Up to 3 default prompts (<= 128 chars), exactly 5 positive + 3 negative test cases, square logo, `./`
+  asset paths. `tools_triggered` is ONE string per test case (e.g. "suggest_move"), never an array
+  ("...tools_triggered: Input should be a valid string").
+- Subtitle (short description) <= 30 characters.
+- mcp.json declares auth explicitly, or the portal shows Authentication "Unavailable" and Connect does
+  nothing: `{"<key>": {"type":"streamable-http","url":"https://<domain>/mcp","headers":{},
+  "extensions":{"com.openai":{"auth":{"type":"none"}}}}}`.
+- Validate the whole pack BEFORE the first upload: "Upload new version" REPLACES the draft, so each fix
+  after that costs a re-upload.
 - **Developer/author name = the name OpenAI verified** (Settings > Organization > Verifications shows
   Individual or Business). Publishing as a brand you did not verify as a business gets rejected.
 - Host the demo video on the product's own domain under `/review/` with `X-Robots-Tag: noindex`, not in
