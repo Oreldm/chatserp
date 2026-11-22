@@ -113,11 +113,30 @@ and pick it. After server changes: **Refresh** on its connection. Run the 5 posi
   showing the main tools and the test cases on desktop AND mobile; record it in the ChatGPT test setup above
 - Test account only if auth is used: full features, no MFA / email codes / magic links
 
+## Package rules the upload enforces (learned from real uploads)
+
+- Every URL in plugin.json is an absolute `https://` URL: support (NOT mailto), privacy, terms,
+  website, author, `review.demo_recording_url`. Placeholders fail at upload
+  ("Invalid Codex compatibility overlay: interface.supportURL: Value must be an absolute https:// URL").
+- `category` is one of: Productivity, Creativity, Developer Tools, Business & Operations, Data & Analytics,
+  Communication, Education & Research, Security, Finance, Healthcare, Travel, Entertainment, Other
+  ("Games" is invalid; games use Entertainment).
+- `brandColor` needs >= 2:1 contrast on white; `brandColorDark` >= 2:1 on #212121.
+- Up to 3 default prompts (<= 128 chars), exactly 5 positive + 3 negative test cases, `tools_triggered` as
+  strings, square logo, `./` asset paths.
+- **Developer/author name = the name OpenAI verified** (Settings > Organization > Verifications shows
+  Individual or Business). Publishing as a brand you did not verify as a business gets rejected.
+- Host the demo video on the product's own domain under `/review/` with `X-Robots-Tag: noindex`, not in
+  the sitemap. Record it in the real ChatGPT test setup (Step 4) with the chat sidebar hidden.
+
 ## Step 7 - Submit (platform.openai.com > Plugins)
 
 1. Confirm the org shows Verified.
 2. Upload `plugin.zip`, fill the listing, privacy URL, support, icon, test cases, release notes.
-3. Copy the domain-challenge token -> deploy it -> press verify.
+3. Plugin page > MCPs tab > **Connect** > Domain verification shows the token for
+   `https://<domain>/.well-known/openai-apps-challenge`. Use its copy button and read the clipboard (don't
+   retype it), serve it as text/plain, deploy, then **Verify Domain**. Then Connect/Rescan so the tools
+   and widgets are discovered.
 4. Accepting OpenAI's plugin/developer terms is the user's click: stop and ask.
 5. Submit. Review time is not published and can't be expedited. Record the submission on the
    project tracker; check status every few days, fix rejections from the review notes.
